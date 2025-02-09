@@ -28,7 +28,7 @@ local OrionLib = {
 }
 
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
-local Icons = {}
+--[[local Icons = {}
 
 local Success, Response = pcall(function()
 	Icons = HttpService:JSONDecode(game:HttpGetAsync("https://raw.githubusercontent.com/evoincorp/lucideblox/master/src/modules/util/icons.json")).icons
@@ -44,7 +44,7 @@ local function GetIcon(IconName)
 	else
 		return nil
 	end
-end   
+end   ]]
 
 local Orion = Instance.new("ScreenGui")
 Orion.Name = "Orion"
@@ -344,7 +344,7 @@ CreateElement("ScrollFrame", function(Color, Width)
 	return ScrollFrame
 end)
 
-CreateElement("Image", function(ImageID)
+--[[CreateElement("Image", function(ImageID)
 	local ImageNew = Create("ImageLabel", {
 		Image = ImageID,
 		BackgroundTransparency = 1
@@ -355,7 +355,7 @@ CreateElement("Image", function(ImageID)
 	end	
 
 	return ImageNew
-end)
+end)]]
 
 CreateElement("ImageButton", function(ImageID)
 	local Image = Create("ImageButton", {
@@ -753,9 +753,9 @@ function OrionLib:MakeWindow(WindowConfig)
 			}), "Text")
 		})
 
-		if GetIcon(TabConfig.Icon) ~= nil then
+		--[[if GetIcon(TabConfig.Icon) ~= nil then
 			TabFrame.Ico.Image = GetIcon(TabConfig.Icon)
-		end	
+		end	]]
 
 		local Container = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 5), {
 			Size = UDim2.new(1, -150, 1, -50),
